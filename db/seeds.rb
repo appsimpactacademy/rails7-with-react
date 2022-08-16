@@ -49,6 +49,18 @@ questions = Question.create([
     tag: 'Ruby'
   },
   {
+    title: 'What is the difference between save and save! methods?',
+    tag: 'Rails'
+  }, 
+  {
+    title: 'What is the difference between render and redirect?',
+    tag: 'Rails'
+  }, 
+  {
+    title: 'What is the difference between delete and destroy?',
+    tag: 'Rails'
+  },
+  {
     title: 'What is the difference between class and functional components in React?',
     tag: 'React'
   },
