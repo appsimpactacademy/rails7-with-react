@@ -33,7 +33,7 @@ class QuestionDetail extends React.Component {
   }
 
   updateQuestionCounter = (data) => {
-    fetch(`http://localhost:3000/api/v1/questions/${this.props.question.id}/update_counter`, {
+    fetch(`/api/v1/questions/${this.props.question.id}/update_counter`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

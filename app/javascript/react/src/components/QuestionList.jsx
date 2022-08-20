@@ -19,7 +19,7 @@ const QuestionList = () => {
   const [selectedOption, setSelectedOption] = useState(questionsTags[0].value)
   const [isShowAlert, setIsShowAlert] = useState(false)
 
-  const questionsUrl = 'http://localhost:3000/api/v1/questions'
+  const questionsUrl = '/api/v1/questions'
   
   const fetchQuestionList = () => {
     fetch(questionsUrl)
