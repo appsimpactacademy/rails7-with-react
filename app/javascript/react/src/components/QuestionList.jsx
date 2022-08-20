@@ -62,7 +62,7 @@ const QuestionList = () => {
   return(
     <div className="row">
       <div className="col-lg-10 mx-auto">
-        <p className="lead fw-bold">Fileter Questions by Tags</p>
+        <p className="lead fw-bold">Filter Questions by Tags</p>
         <select 
           className="form-select form-select-lg rounded-0" 
           value={selectedOption} 

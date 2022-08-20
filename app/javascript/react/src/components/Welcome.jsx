@@ -6,8 +6,12 @@ class Welcome extends React.Component {
   render() {
     return(
       <div className="container">
-        <h1>Hello World! Welcome to the Rails 7 course with React JS</h1>
-        <p className="lead">This is the first lecture and there are many more coming.</p>
+        <div className="row mt-5">
+          <div className="col-lg-10 mx-auto">
+            <h1 className='text-center mb-5'>APPSIMPACT Academy</h1>
+            <p className="lead mb-5">Here you will find all you need to know and prepare for your next interview. Our collection of questions not only help you in getting a better job but also in understanding the concepts much better.</p>
+          </div>
+        </div>
         <QuestionList />
       </div>
     )
