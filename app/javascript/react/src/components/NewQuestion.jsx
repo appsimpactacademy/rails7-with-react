@@ -31,10 +31,28 @@ const NewQuestion = () => {
   const handleQuestionSubmit = (event) => {
     event.preventDefault();
     console.log(formField)
+    createQuestion(formField)
   }
 
   const handleFormFields = (event) => {
     setFormField({ ...formField, [event.target.name]: event.target.value})
+  }
+
+  const createQuestion = (data) => {
+    fetch(`/api/v1/questions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Success:', data)
+    })
+    .catch((error) => {
+      console.log('Error:', error)
+    })
   }
 
   return(
