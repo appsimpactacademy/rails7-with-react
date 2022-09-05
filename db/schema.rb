@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_18_074238) do
   enable_extension "plpgsql"
 
   create_table "questions", force: :cascade do |t|
-    t.string "title"
-    t.string "tag"
+    t.text "title"
+    t.text "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0
