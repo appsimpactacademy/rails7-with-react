@@ -13,17 +13,6 @@ const NewQuestion = () => {
     { label: 'Data Structure', value: 'Data Structure' }
   ]
 
-  // const [title, setTitle] = useState('')
-  // const [tag, setTag] = useState(questionsTags[0].value)
-
-  // const handleTitleChange = (event) => {
-  //   setTitle(event.target.value)
-  // }
-
-  // const handleTagChange = (event) => {
-  //   setTag(event.target.value)
-  // }
-
   const [isServerSideError, setIsServerSideError] = useState(false)
   const [serverErrors, setServerErrors] = useState([])
 
@@ -81,7 +70,6 @@ const NewQuestion = () => {
                 <label className="form-label mt-3 mb-3">Title</label>
                 <input type="text" className="form-control form-control-lg rounded-0" value={formField.title} onChange={event => handleFormFields(event)} name="title" />
               </div>
-
               <div className="form-group">
                 <label className="form-label mt-3 mb-3">Select the question tag</label>
                 <select className="form-select form-select-lg rounded-0" value={formField.tag} onChange={event => handleFormFields(event)} name="tag">
@@ -102,4 +90,4 @@ const NewQuestion = () => {
   )
 }
 
-export default NewQuestion
+export default NewQuestion;

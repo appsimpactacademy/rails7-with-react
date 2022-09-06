@@ -87,4 +87,4 @@ const QuestionList = () => {
   )
 }
 
-export default QuestionList
+export default QuestionList;

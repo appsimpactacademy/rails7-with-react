@@ -13,4 +13,4 @@ const ServerSideError = (props) => {
   )
 }
 
-export default ServerSideError
+export default ServerSideError;
