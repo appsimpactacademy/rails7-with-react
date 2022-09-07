@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { useState, useEffect } from 'react'
-import * as ReactDOM from 'react-dom'
+import * as React from 'react';
+import { useState } from 'react';
+// import * as ReactDOM from 'react-dom'
 import ServerSideError from './ServerSideError';
 
 const Answer = (question) => {
