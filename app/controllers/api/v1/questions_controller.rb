@@ -20,6 +20,12 @@ class Api::V1::QuestionsController < ApplicationController
     render json: @question, status: :ok
   end
 
+  def answer
+    @question = Question.find(params[:id])
+    @question.update(answer: params[:answer])
+    render json: @question, status: :ok
+  end
+
   def create
     @question = Question.new(question_params)
     if @question.save
