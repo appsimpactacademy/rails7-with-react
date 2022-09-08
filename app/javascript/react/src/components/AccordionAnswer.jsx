@@ -5,27 +5,25 @@ import Answer from './Answer';
 
 const AccordionAnswer = ({ question }) => {
 
-  const [isShowAnswer, setIsShowAnswer] = useState(false)
-
   return (
     <div className="accordion" id="accordionAnswer">
       <div className="accordion-item">
-        <h2 className="accordion-header" id="headingOne">
+        <h2 className="accordion-header" id={`heading${question.id}`}>
           <button
             className="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
+            data-bs-target={`#collapse${question.id}`}
             aria-expanded="true"
-            aria-controls="collapseOne"
+            aria-controls={`collapse${question.id}`}
           >
             <span className='btn btn-success me-2'>Answer</span>
           </button>
         </h2>
         <div
-          id="collapseOne"
+          id={`collapse${question.id}`}
           className="accordion-collapse collapse"
-          aria-labelledby="headingOne"
+          aria-labelledby={`heading${question.id}`}
           data-bs-parent="#accordionAnswer"
         > 
           <div className="accordion-body">

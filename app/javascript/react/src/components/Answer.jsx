@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
-// import * as ReactDOM from 'react-dom'
+import * as ReactDOM from 'react-dom';
 import ServerSideError from './ServerSideError';
 
 const Answer = (question) => {
 
+  const { id } = question['question'];
   const [answer, setAnswer] = useState('');
   const [isServerSideError, setIsServerSideError] = useState(false);
   const [serverErrors, setServerErrors] = useState([])
@@ -16,11 +17,13 @@ const Answer = (question) => {
   const handleAnswerSubmit = (event) => {
     event.preventDefault();
     console.log('Answer is: ', answer);
+    console.log('Question is: ', question);
+    console.log('Question ID is: ', id);
     createAnswer({answer: answer});
   }
 
   const createAnswer = (data) => {
-    fetch(`/api/v1/questions/1/answer`, {
+    fetch(`/api/v1/questions/${id}/answer`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -42,11 +45,11 @@ const Answer = (question) => {
   }
 
   return (
-    <div className="modal fade" id="answerModal" tabIndex="-1" role="dialog" aria-labelledby="answerModalLabel" aria-hidden="true">
+    <div className="modal fade" id={`answerModal${id}`} tabIndex="-1" role="dialog" aria-labelledby={`answerModalLabel${id}`} aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="answerModalLabel">Write your answer</h5>
+            <h5 className="modal-title" id={`answerModalLabel${id}`}>Write your answer</h5>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form onSubmit={handleAnswerSubmit}>
@@ -58,8 +61,8 @@ const Answer = (question) => {
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" className="btn btn-primary">Answer question</button>
+              {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+              <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Answer question</button>
             </div>
           </form>
         </div>

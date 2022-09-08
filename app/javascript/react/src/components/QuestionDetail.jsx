@@ -10,7 +10,8 @@ class QuestionDetail extends React.Component {
     this.state = { 
       likeCount: this.props.question.likes_count,
       dislikeCount: this.props.question.dislikes_count,
-      answer: this.props.question.answer
+      answer: this.props.question.answer,
+      id: this.props.question.id
     }
 
     this.updateLikeCounter = this.updateLikeCounter.bind(this)
@@ -54,7 +55,11 @@ class QuestionDetail extends React.Component {
   }
 
   provideAnAnswer = () => {
-    this.setState(this.props.question.answer)
+    this.setState((state) => {
+      return {
+        id: this.state.id
+      }
+    })
   }
 
   render() {
@@ -81,15 +86,14 @@ class QuestionDetail extends React.Component {
               </button>
             </div>
             { this.state.answer == null ?
-              <button type="button" className="btn btn-secondary position-relative" data-bs-toggle="modal" data-bs-target="#answerModal"
-                onClick={this.provideAnAnswer}>Provide an answer
-              </button>
-            :
+              <button type="button" className="btn btn-secondary position-relative" data-bs-toggle="modal" data-bs-target={`#answerModal${this.state.id}`} onClick={this.provideAnAnswer}>
+                Provide an answer
+              </button> :
               <AccordionAnswer question={this.props.question} />
             }
           </div>
-        </div>
       </div>
+    </div>
     )
   }
 }
