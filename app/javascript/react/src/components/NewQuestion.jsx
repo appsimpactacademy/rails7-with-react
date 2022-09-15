@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { useState, useEffect } from 'react'
-import * as ReactDOM from 'react-dom'
-import ServerSideError from './ServerSideError'
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import * as ReactDOM from 'react-dom';
+import ServerSideError from './ServerSideError';
 
 const NewQuestion = () => {
   const questionsTags = [
@@ -12,17 +12,6 @@ const NewQuestion = () => {
     { label: 'Javascript', value: 'Javascript' },
     { label: 'Data Structure', value: 'Data Structure' }
   ]
-
-  // const [title, setTitle] = useState('')
-  // const [tag, setTag] = useState(questionsTags[0].value)
-
-  // const handleTitleChange = (event) => {
-  //   setTitle(event.target.value)
-  // }
-
-  // const handleTagChange = (event) => {
-  //   setTag(event.target.value)
-  // }
 
   const [isServerSideError, setIsServerSideError] = useState(false)
   const [serverErrors, setServerErrors] = useState([])
@@ -81,7 +70,6 @@ const NewQuestion = () => {
                 <label className="form-label mt-3 mb-3">Title</label>
                 <input type="text" className="form-control form-control-lg rounded-0" value={formField.title} onChange={event => handleFormFields(event)} name="title" />
               </div>
-
               <div className="form-group">
                 <label className="form-label mt-3 mb-3">Select the question tag</label>
                 <select className="form-select form-select-lg rounded-0" value={formField.tag} onChange={event => handleFormFields(event)} name="tag">
@@ -92,8 +80,8 @@ const NewQuestion = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" className="btn btn-primary">Submit Question</button>
+              {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+              <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Submit Question</button>
             </div>
           </form>
         </div>
@@ -102,4 +90,4 @@ const NewQuestion = () => {
   )
 }
 
-export default NewQuestion
+export default NewQuestion;

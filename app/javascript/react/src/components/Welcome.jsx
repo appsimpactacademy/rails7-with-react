@@ -25,4 +25,4 @@ root.render(
   </React.StrictMode>
 )
 
-export default Welcome
+export default Welcome;
